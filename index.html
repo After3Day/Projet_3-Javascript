@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" href="https://pasche-e.com/Velyon/images/logoGIF.gif" type="image/gif" sizes="16x16">
+
+
+
+    <title>Vé'Lyon</title>
+
+    <meta property="og:title" content="Vé'Lyon" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pasche-e.com/Velyon/" />
+    <meta property="og:image" content="https://pasche-e.com/Velyon/images/logoPNG.png" />
+    <meta property="og:description" content="Besoin de te déplacer écologiquement ? Prends donc un vé'lyo !">
+
+    <meta name="description" content="Besoin de te déplacer écologiquement ? Prends donc un vé'lyo !">
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" media="screen and (max-width: 1024px) and (orientation: landscape)" href="css/style2.css" /> <!-- Phone landscape-->
+
+    <link rel="stylesheet" media="screen and (min-width: 767px) and (max-width: 1024px) and (orientation: portrait)" href="css/style3.css" /> <!-- Ipad portrait-->
+
+    <link rel="stylesheet" media="screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape)" href="css/style4.css" /> <!-- Ipad landscape-->
+
+    <link rel="stylesheet" media="screen and (min-width: 1366px) and (max-width: 1921px)" href="css/style5.css" /> <!-- Desktop 1366 - 1920 -->
+
+    <link rel="stylesheet" media="screen and (min-width: 1922px)" href="css/style6.css" /> <!-- Desktop 1920++ -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <section id="secUne">
+        <h2>Diaporama informatif</h2>
+        <!-- Slideshow -->
+        <div id="SliderContainer">
+            <!--Silder test -->
+            <div>
+                <img class="Slider" src="images/Capture_001-Copy.JPG" alt="Capture_001">
+                <img class="Slider" src="images/Capture_002-Copy.JPG" alt="Capture_002">
+                <img class="Slider" src="images/Capture_003-Copy.JPG" alt="Capture_003">
+                <img class="Slider" src="images/Capture_004-Copy.JPG" alt="Capture_004">
+            </div>
+            <button class="bouttonSlideshow" id="gauche">&#10094;</button>
+            <button class="bouttonSlideshow" id="droite">&#10095;</button>
+            <div id="control">
+                <button id="playButton"><i class="far fa-play-circle"></i></button>
+                <button id="pauseButton"><i class="far fa-pause-circle"></i></button>
+            </div>
+            <div class="bouttonContainer" id="actif">
+                <button class="bouttonIndic" id="1"></button>
+                <button class="bouttonIndic" id="2"></button>
+                <button class="bouttonIndic" id="3"></button>
+                <button class="bouttonIndic" id="4"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="MiddleSection">
+        <h2>Carte et Formulaire</h2>
+        <!-- Middle -->
+        <div id="mapid">
+        </div>
+
+        <div id="formContainer">
+            <!-- Form -->
+
+            <div id="infosStation">
+                <span>Station : <span id="nomStation"></span></span><br>
+                <span>Vélos : <span id="nombreVelos"></span></span><br>
+                <span>Status : <span id="statusStation"></span></span>
+            </div>
+            <form id="form">
+                <label>*Prénom:<br></label>
+                <input type="text" name="prenom" id="prenom" class="testing" required><br>
+                <label>*Nom de famille:<br></label>
+                <input type="text" name="nom" id="nom" class="testing" required><br>
+                <label>*Signature:<br></label>
+                <canvas id="myCanvas" height="150" width="200"></canvas>
+            </form>
+            <div id="bForm">
+                <button type="submit" id="buttonForm" class="bForm" disabled="">Réserver</button>
+                <button id="reset" class="bForm">Effacer</button>
+                <span class="bForm">*Champs Obligatoires</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reserve">
+        <h2>Réservation</h2>
+        <!-- Reserve -->
+        <div id="info">
+            <div id="qui">
+                <div class="res">
+                    <b>Utilisateur : </b><span id="prenom2"></span>
+                    <span id="nom2"></span>
+                </div>
+            </div>
+            <div class="res">
+                <b>Station : </b><span id="quoi"></span>
+            </div>
+        </div>
+
+        <div id="chrono">
+            <span id="tmpsRst"><b>Temps restant : </b></span>
+            <span id="minutes"></span> :
+            <span id="secondes"></span>
+        </div>
+    </section>
+
+    <script src="javascript/request.js"></script>
+    <script src="javascript/leaflet.awesome-markers.js"></script>
+    <script src="javascript/canvas.js"></script>
+    <script src="javascript/reserve.js"></script>
+    <script src="javascript/chrono.js"></script>
+    <script src="javascript/diaporama.js"></script>
+    <script src="javascript/map.js"></script>
+    <script src="javascript/javascript.js"></script>
+</body>
+
+</html>

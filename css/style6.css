@@ -1,0 +1,51 @@
+/* Réglages généraux */
+
+/* Diaporama */
+
+.bouttonSlideshow {
+    font-size: 1000%;
+}
+
+.bouttonIndic {
+    width: 5em;
+    height: 5em;
+}
+
+#control {
+    font-size: 5em;
+}
+
+/* Map */
+
+#mapid {
+    height: 62vh;
+    min-width: 70%;
+    margin: initial;
+}
+
+#formContainer {
+    font-size: 2.4em;
+    height: 62vh;
+    width: 25%;
+}
+
+/* Réservation */
+
+#reserve {
+    font-size: 3em;
+}
+
+#info {
+    text-align: left;
+    font-size: 1.1em;
+    display: inherit;
+    width: initial;
+    margin: initial;
+
+}
+
+#chrono {
+    font-size: 2em;
+    width: initial;
+    margin: initial;
+}
